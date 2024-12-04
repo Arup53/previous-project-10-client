@@ -13,9 +13,26 @@ function CampaignDetails() {
 
   const date = deadline && moment(deadline).format("D MMMM YYYY");
 
-  console.log(date);
+  console.log(user);
 
-  function handleDonateSubmission() {}
+  function handleDonateSubmission(name, email) {
+    console.log(name, email);
+    const donatedUser = {
+      email,
+      name,
+    };
+
+    console.log(donatedUser);
+    fetch("http://localhost:3000/donations", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(donatedUser),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  }
 
   if (loading) {
     return (
@@ -39,7 +56,12 @@ function CampaignDetails() {
           </figure>
           <h3>{title}</h3>
           <p>{info}</p>
-          <button className="btn w-full">Donate</button>
+          <button
+            onClick={() => handleDonateSubmission(user.displayName, user.email)}
+            className="btn w-full"
+          >
+            Donate
+          </button>
         </div>
 
         {/* right */}

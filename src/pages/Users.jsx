@@ -1,39 +1,53 @@
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Navigate, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useAuthContext } from "../context/AuthProvider";
 
 function Users() {
   const loadedUsers = useLoaderData();
+  const { user, loading } = useAuthContext();
   const [users, setUsers] = useState(loadedUsers);
 
-  function handleDelete(id) {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        // delete from the database
-        fetch(`http://localhost:3000/users/${id}`, { method: "DELETE" })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.deletedCount) {
-              Swal.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
-                icon: "success",
-              });
-            }
-            const remaingUsers = users.filter((user) => user._id !== id);
-            setUsers(remaingUsers);
-            console.log(data);
-          });
-      }
-    });
+  // function handleDelete(id) {
+  //   Swal.fire({
+  //     title: "Are you sure?",
+  //     text: "You won't be able to revert this!",
+  //     icon: "warning",
+  //     showCancelButton: true,
+  //     confirmButtonColor: "#3085d6",
+  //     cancelButtonColor: "#d33",
+  //     confirmButtonText: "Yes, delete it!",
+  //   }).then((result) => {
+  //     if (result.isConfirmed) {
+  //       // delete from the database
+  //       fetch(`http://localhost:3000/users/${id}`, { method: "DELETE" })
+  //         .then((res) => res.json())
+  //         .then((data) => {
+  //           if (data.deletedCount) {
+  //             Swal.fire({
+  //               title: "Deleted!",
+  //               text: "Your file has been deleted.",
+  //               icon: "success",
+  //             });
+  //           }
+  //           const remaingUsers = users.filter((user) => user._id !== id);
+  //           setUsers(remaingUsers);
+  //           console.log(data);
+  //         });
+  //     }
+  //   });
+  // }
+
+  if (loading) {
+    return (
+      <div className="min-h-[600px] mx-auto flex justify-center items-center">
+        <span className="loading loading-bars loading-lg"></span>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return <Navigate to={"/login"} />;
   }
 
   return (
