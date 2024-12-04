@@ -4,13 +4,15 @@ import MainLayout from "./layout/MainLayout";
 import SignUp from "./components/SignUp";
 import Users from "./pages/MyCampaign";
 import LogIn from "./components/LogIn";
-import AddElements from "./pages/AddElements";
+import AddElements from "./pages/AddCampaigns";
 
-import UpdateElements from "./pages/UpdateElements";
+import UpdateElements from "./pages/UpdateMyCampaign";
 import Campaigns from "./pages/Campaigns";
 
 import CampaignDetails from "./pages/CampaignDetails";
 import MyCampaign from "./pages/MyCampaign";
+import UpdateMyCampaign from "./pages/UpdateMyCampaign";
+import AddCampaigns from "./pages/AddCampaigns";
 
 const router = createBrowserRouter([
   {
@@ -39,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/addcampaign",
-        element: <AddElements />,
+        element: <AddCampaigns />,
       },
       {
         path: "/details/:id",
@@ -48,10 +50,10 @@ const router = createBrowserRouter([
           fetch(`http://localhost:3000/campaigns/${params.id}`),
       },
       {
-        path: "/updateelements/:id",
-        element: <UpdateElements />,
-        loader: ({ params }) =>
-          fetch(`http://localhost:3000/elements/${params.id}`),
+        path: "/updatecampaign/:id",
+        element: <UpdateMyCampaign />,
+        // loader: ({ params }) =>
+        //   fetch(`http://localhost:3000/elements/${params.id}`),
       },
     ],
   },

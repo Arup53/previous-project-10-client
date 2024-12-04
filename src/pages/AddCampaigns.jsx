@@ -3,7 +3,7 @@ import { useAuthContext } from "../context/AuthProvider";
 import toast from "react-hot-toast";
 import { Navigate } from "react-router-dom";
 
-function AddElements() {
+function AddCampaigns() {
   const { user, loading } = useAuthContext();
   const [userObj, setUserObj] = useState({});
   console.log(user);
@@ -18,6 +18,7 @@ function AddElements() {
   }, [user]);
 
   console.log(userObj);
+
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -192,4 +193,4 @@ function AddElements() {
   );
 }
 
-export default AddElements;
+export default AddCampaigns;

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { Navigate, useLoaderData } from "react-router-dom";
+import { Link, Navigate, useLoaderData } from "react-router-dom";
 import { useAuthContext } from "../context/AuthProvider";
 import Swal from "sweetalert2";
-import { GrUpdate } from "react-icons/gr";
+import { TiDocumentAdd } from "react-icons/ti";
 import { MdOutlineDeleteForever } from "react-icons/md";
 
 function MyCampaign() {
@@ -97,9 +97,12 @@ function MyCampaign() {
                       <td>{campaign.minamount}</td>
                       <td>{campaign.deadline}</td>
                       <td className="flex gap-2">
-                        <button className="btn text-green-600  text-sm">
-                          <GrUpdate />
-                        </button>
+                        <Link
+                          to={`/updatecampaign/${campaign._id}`}
+                          className="btn text-green-600  text-sm"
+                        >
+                          <TiDocumentAdd />
+                        </Link>
                         <button
                           onClick={() => handleDelete(campaign._id)}
                           className="btn text-red-600 text-sm"
