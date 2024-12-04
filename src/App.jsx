@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home";
 import MainLayout from "./layout/MainLayout";
 import SignUp from "./components/SignUp";
-import Users from "./pages/Users";
+import Users from "./pages/MyCampaign";
 import LogIn from "./components/LogIn";
 import AddElements from "./pages/AddElements";
 
@@ -10,6 +10,7 @@ import UpdateElements from "./pages/UpdateElements";
 import Campaigns from "./pages/Campaigns";
 
 import CampaignDetails from "./pages/CampaignDetails";
+import MyCampaign from "./pages/MyCampaign";
 
 const router = createBrowserRouter([
   {
@@ -28,9 +29,8 @@ const router = createBrowserRouter([
         element: <LogIn />,
       },
       {
-        path: "/users",
-        element: <Users />,
-        loader: () => fetch("http://localhost:3000/users"),
+        path: "/mycampaign",
+        element: <MyCampaign />,
       },
       {
         path: "/campaigns",

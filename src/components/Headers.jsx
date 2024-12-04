@@ -21,7 +21,7 @@ function Headers() {
         <NavLink className="btn" to={"/addcampaign"}>
           Add New Campaign
         </NavLink>
-        <NavLink className="btn" to={"/users"}>
+        <NavLink className="btn" to={"/mycampaign"}>
           My Campaign
         </NavLink>
         <NavLink className="btn" to={"/login"}>

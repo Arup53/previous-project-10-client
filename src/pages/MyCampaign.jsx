@@ -1,13 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navigate, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useAuthContext } from "../context/AuthProvider";
 
-function Users() {
-  const loadedUsers = useLoaderData();
+function MyCampaign() {
   const { user, loading } = useAuthContext();
-  const [users, setUsers] = useState(loadedUsers);
+  const [myCampaigns, setMyCampaigns] = useState(null);
 
+  useEffect(() => {
+    let { email } = user || {};
+    if (email) {
+      fetch(
+        `http://localhost:3000/mycampaigns?email=${encodeURIComponent(email)}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          setMyCampaigns(data);
+        });
+    }
+  }, [user]);
+
+  console.log(myCampaigns);
   // function handleDelete(id) {
   //   Swal.fire({
   //     title: "Are you sure?",
@@ -51,43 +65,10 @@ function Users() {
   }
 
   return (
-    <div>
-      <div className="overflow-x-auto">
-        <table className="table">
-          {/* head */}
-          <thead>
-            <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Last Login</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {/* row  */}
-            {users &&
-              users?.map((user, idx) => (
-                <tr key={user._id} className="hover">
-                  <th>{idx + 1}</th>
-                  <td>{user.name}</td>
-                  <td>{user.email}</td>
-                  <td>Purple</td>
-                  <td>
-                    <button
-                      onClick={() => handleDelete(user._id)}
-                      className="btn"
-                    >
-                      X
-                    </button>
-                  </td>
-                </tr>
-              ))}
-          </tbody>
-        </table>
-      </div>
+    <div className="my-24 py-12">
+      {myCampaigns && <div className="w-[80%] mx-auto "></div>}
     </div>
   );
 }
 
-export default Users;
+export default MyCampaign;
