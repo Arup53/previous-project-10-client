@@ -11,6 +11,8 @@ function MainLayout() {
       <main>
         <Outlet />
       </main>
+
+      <footer className="">This is footer</footer>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { useAuthContext } from "../context/AuthProvider";
 
 function SignUp() {
-  const { signUp } = useAuthContext();
+  const { signUp, updateUser } = useAuthContext();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -10,12 +10,15 @@ function SignUp() {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.pass.value;
+    const photo = form.photo.value;
 
     signUp(email, password)
       .then((data) => {
         console.log(data);
+        updateUser(name, photo);
         const createdAt = data.user?.metadata?.creationTime;
         const newUser = { name, email, createdAt };
+
         fetch("http://localhost:3000/users", {
           method: "POST",
           headers: {
@@ -45,6 +48,18 @@ function SignUp() {
                   name="name"
                   type="text"
                   placeholder="Username"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Photo</span>
+                </label>
+                <input
+                  name="photo"
+                  type="text"
+                  placeholder="PhotoURL"
                   className="input input-bordered"
                   required
                 />
