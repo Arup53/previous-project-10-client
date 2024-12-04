@@ -24,6 +24,9 @@ function Headers() {
         <NavLink className="btn" to={"/mycampaign"}>
           My Campaign
         </NavLink>
+        <NavLink className="btn" to={"/mydonations"}>
+          My Donations
+        </NavLink>
         <NavLink className="btn" to={"/login"}>
           Login
         </NavLink>
