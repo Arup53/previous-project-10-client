@@ -5,8 +5,11 @@ import SignUp from "./components/SignUp";
 import Users from "./pages/Users";
 import LogIn from "./components/LogIn";
 import AddElements from "./pages/AddElements";
-import Elements from "./pages/Elements";
+
 import UpdateElements from "./pages/UpdateElements";
+import Campaigns from "./pages/Campaigns";
+
+import CampaignDetails from "./pages/CampaignDetails";
 
 const router = createBrowserRouter([
   {
@@ -30,13 +33,19 @@ const router = createBrowserRouter([
         loader: () => fetch("http://localhost:3000/users"),
       },
       {
-        path: "/elements",
-        element: <Elements />,
-        loader: () => fetch("http://localhost:3000/elements"),
+        path: "/campaigns",
+        element: <Campaigns />,
+        loader: () => fetch("http://localhost:3000/campaigns"),
       },
       {
         path: "/addcampaign",
         element: <AddElements />,
+      },
+      {
+        path: "/details/:id",
+        element: <CampaignDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/campaigns/${params.id}`),
       },
       {
         path: "/updateelements/:id",

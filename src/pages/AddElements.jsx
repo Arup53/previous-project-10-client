@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuthContext } from "../context/AuthProvider";
+import toast from "react-hot-toast";
+import { Navigate } from "react-router-dom";
 
 function AddElements() {
   const { user, loading } = useAuthContext();
@@ -51,6 +53,7 @@ function AddElements() {
     })
       .then((res) => res.json())
       .then((data) => {
+        toast.success("Campaign Added Successfully ");
         console.log(data);
       });
 
