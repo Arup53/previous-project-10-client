@@ -14,6 +14,7 @@ import MyCampaign from "./pages/MyCampaign";
 import UpdateMyCampaign from "./pages/UpdateMyCampaign";
 import AddCampaigns from "./pages/AddCampaigns";
 import MyDonations from "./pages/MyDonations";
+import Test from "./components/Test";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+        loader: () => fetch("http://localhost:3000/campaigns"),
       },
       {
         path: "/signup",
@@ -59,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: "/mydonations",
         element: <MyDonations />,
+      },
+      {
+        path: "/test",
+        element: <Test />,
       },
     ],
   },
