@@ -2,19 +2,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home";
 import MainLayout from "./layout/MainLayout";
 import SignUp from "./components/SignUp";
-import Users from "./pages/MyCampaign";
-import LogIn from "./components/LogIn";
-import AddElements from "./pages/AddCampaigns";
-
-import UpdateElements from "./pages/UpdateMyCampaign";
 import Campaigns from "./pages/Campaigns";
-
 import CampaignDetails from "./pages/CampaignDetails";
 import MyCampaign from "./pages/MyCampaign";
 import UpdateMyCampaign from "./pages/UpdateMyCampaign";
 import AddCampaigns from "./pages/AddCampaigns";
 import MyDonations from "./pages/MyDonations";
-import Test from "./components/Test";
+import LogIn from "./components/LogIn";
 
 const router = createBrowserRouter([
   {
@@ -61,10 +55,6 @@ const router = createBrowserRouter([
       {
         path: "/mydonations",
         element: <MyDonations />,
-      },
-      {
-        path: "/test",
-        element: <Test />,
       },
     ],
   },
