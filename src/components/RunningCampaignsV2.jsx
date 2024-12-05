@@ -21,7 +21,10 @@ function RunningCampaignsV2() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {campaigns &&
           campaigns.map((campaign) => (
-            <div className="card bg-base-100 w-96 rounded-t-none shadow-xl">
+            <div
+              key={campaign._id}
+              className="card bg-base-100 w-96 rounded-t-none shadow-xl"
+            >
               <figure>
                 <img className="h-[300px]" src={`${campaign.image}`} />
               </figure>

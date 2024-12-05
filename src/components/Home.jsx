@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import { useAuthContext } from "../context/AuthProvider";
 import Banner from "./Banner";
-import RunningCampaigns from "./RunningCampaigns";
+
 import RunningCampaignsV2 from "./RunningCampaignsV2";
 
 function Home() {
@@ -12,13 +12,14 @@ function Home() {
       <Banner />
 
       {/*Running campaign sections */}
-      <div>
+      <div className="w-[90%] mx-auto">
         <h3 className="text-4xl font-bold my-12 text-center">
           Running Campaings
         </h3>
         <RunningCampaignsV2 />
       </div>
-      {/* 2 extra section */}
+      {/* statistics section */}
+      <div className="w-[90%] mx-auto"></div>
     </div>
   );
 }

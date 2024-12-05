@@ -3,8 +3,8 @@ import Headers from "../components/Headers";
 
 function MainLayout() {
   return (
-    <div className="md:w-[90%] mx-auto">
-      <header>
+    <div>
+      <header className="md:w-[90%] mx-auto">
         <Headers />
       </header>
 
