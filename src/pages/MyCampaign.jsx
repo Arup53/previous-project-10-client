@@ -4,6 +4,7 @@ import { useAuthContext } from "../context/AuthProvider";
 import Swal from "sweetalert2";
 import { TiDocumentAdd } from "react-icons/ti";
 import { MdOutlineDeleteForever } from "react-icons/md";
+import ReuseableBannerForPages from "../components/ReuseableBannerForPages";
 
 function MyCampaign() {
   const { user, loading } = useAuthContext();
@@ -70,8 +71,15 @@ function MyCampaign() {
   }
 
   return (
-    <div className="my-24 py-12">
-      <div className="w-[80%] mx-auto ">
+    <div>
+      <div className="h-[600px]  bg-[url('c-2.jpg')]  bg-cover bg-no-repeat mb-24">
+        <div className="h-full w-full bg-gradient-to-b from-black/40 to-black/60"></div>
+        <p className="bg-orange-400 text-4xl font-bold text-white text-center relative -top-14 left-1/3 px-12 py-6 w-[400px]">
+          My Campaigns
+        </p>
+      </div>
+
+      <div className="w-[80%] mx-auto my-12 py-12">
         {myCampaigns && (
           <div className="overflow-x-auto">
             <table className="table">

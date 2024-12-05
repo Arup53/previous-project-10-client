@@ -71,122 +71,130 @@ function UpdateMyCampaign() {
   }
 
   return (
-    <div className="min-h-[400px] flex justify-center items-center ">
-      <form onSubmit={handleSubmit}>
-        {/* form row name and quantity */}
-        <div className="md:flex gap-4">
-          <div>
-            <h3>Image</h3>
-            <div className="join">
-              <input
-                name="image"
-                type="text"
-                className="input input-bordered join-item w-[400px]"
-                placeholder="imageURL"
-              />
+    <>
+      <div className="h-[600px]  bg-[url('c-5.jpg')]  bg-cover bg-no-repeat mb-24">
+        <div className="h-full w-full bg-gradient-to-b from-black/40 to-black/60"></div>
+        <p className="bg-orange-400 text-4xl font-bold text-white text-center relative -top-14 left-1/3 px-12 py-6 w-[400px]">
+          Update
+        </p>
+      </div>
+      <div className="min-h-[400px] flex justify-center items-center ">
+        <form onSubmit={handleSubmit}>
+          {/* form row name and quantity */}
+          <div className="md:flex gap-4">
+            <div>
+              <h3>Image</h3>
+              <div className="join">
+                <input
+                  name="image"
+                  type="text"
+                  className="input input-bordered join-item w-[400px]"
+                  placeholder="imageURL"
+                />
+              </div>
+            </div>
+            <div>
+              <h3>Campaign title</h3>
+              <div className="join">
+                <input
+                  name="title"
+                  type="text"
+                  className="input input-bordered join-item w-[400px]"
+                  placeholder="Title"
+                />
+              </div>
             </div>
           </div>
-          <div>
-            <h3>Campaign title</h3>
-            <div className="join">
-              <input
-                name="title"
-                type="text"
-                className="input input-bordered join-item w-[400px]"
-                placeholder="Title"
-              />
-            </div>
-          </div>
-        </div>
 
-        {/* form row supplier and test  */}
-        <div className="md:flex gap-4">
-          <div>
-            <h3>Campaign type</h3>
-            <div className="join">
-              <select
-                name="type"
-                className="input input-bordered join-item w-[400px]"
-              >
-                <option>personal issue</option>
-                <option>startup</option>
-                <option>business</option>
-                <option>creative ideas</option>
-              </select>
+          {/* form row supplier and test  */}
+          <div className="md:flex gap-4">
+            <div>
+              <h3>Campaign type</h3>
+              <div className="join">
+                <select
+                  name="type"
+                  className="input input-bordered join-item w-[400px]"
+                >
+                  <option>personal issue</option>
+                  <option>startup</option>
+                  <option>business</option>
+                  <option>creative ideas</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <h3>Description</h3>
+              <div className="join">
+                <input
+                  name="description"
+                  type="text"
+                  className="input input-bordered join-item w-[400px]"
+                  placeholder="description"
+                />
+              </div>
             </div>
           </div>
-          <div>
-            <h3>Description</h3>
-            <div className="join">
-              <input
-                name="description"
-                type="text"
-                className="input input-bordered join-item w-[400px]"
-                placeholder="description"
-              />
-            </div>
-          </div>
-        </div>
 
-        {/* form row category and details */}
-        <div className="md:flex gap-4">
-          <div>
-            <h3>Minimum donation amount</h3>
-            <div className="join">
-              <input
-                name="minamount"
-                type="number"
-                className="input input-bordered join-item w-[400px]"
-                placeholder="minimum donation amount"
-              />
+          {/* form row category and details */}
+          <div className="md:flex gap-4">
+            <div>
+              <h3>Minimum donation amount</h3>
+              <div className="join">
+                <input
+                  name="minamount"
+                  type="number"
+                  className="input input-bordered join-item w-[400px]"
+                  placeholder="minimum donation amount"
+                />
+              </div>
+            </div>
+            <div>
+              <h3>Deadline</h3>
+              <div className="join">
+                <input
+                  name="deadline"
+                  type="date"
+                  className="input input-bordered join-item w-[400px]"
+                  placeholder="Deadline"
+                />
+              </div>
             </div>
           </div>
-          <div>
-            <h3>Deadline</h3>
-            <div className="join">
-              <input
-                name="deadline"
-                type="date"
-                className="input input-bordered join-item w-[400px]"
-                placeholder="Deadline"
-              />
-            </div>
-          </div>
-        </div>
-        {/* form row photo */}
+          {/* form row photo */}
 
-        <div className="md:flex  gap-4">
-          <div>
-            <h3>Email</h3>
-            <div className="join">
-              <input
-                name="email"
-                type="email"
-                className="input input-bordered join-item w-[400px]"
-                placeholder="Email"
-                value={userObj.email || ""}
-                disabled
-              />
+          <div className="md:flex  gap-4">
+            <div>
+              <h3>Email</h3>
+              <div className="join">
+                <input
+                  name="email"
+                  type="email"
+                  className="input input-bordered join-item w-[400px]"
+                  placeholder="Email"
+                  value={userObj.email || ""}
+                  disabled
+                />
+              </div>
+            </div>
+            <div>
+              <h3>Name</h3>
+              <div className="join">
+                <input
+                  name="name"
+                  type="text"
+                  className="input input-bordered join-item w-[400px]"
+                  placeholder="name"
+                  value={userObj.name || ""}
+                  disabled
+                />
+              </div>
             </div>
           </div>
-          <div>
-            <h3>Name</h3>
-            <div className="join">
-              <input
-                name="name"
-                type="text"
-                className="input input-bordered join-item w-[400px]"
-                placeholder="name"
-                value={userObj.name || ""}
-                disabled
-              />
-            </div>
-          </div>
-        </div>
 
-        <input className="btn w-full" type="submit" value="Update Camapign" />
-      </form>
-    </div>
+          <input className="btn w-full" type="submit" value="Update Camapign" />
+        </form>
+      </div>
+    </>
   );
 }
 

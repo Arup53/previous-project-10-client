@@ -3,6 +3,8 @@ import { useAuthContext } from "../context/AuthProvider";
 import Banner from "./Banner";
 
 import RunningCampaignsV2 from "./RunningCampaignsV2";
+import Statistics from "./Statistics";
+import BecomeAVolunteer from "./BecomeAVolunteer";
 
 function Home() {
   const campaigns = useLoaderData();
@@ -19,7 +21,16 @@ function Home() {
         <RunningCampaignsV2 />
       </div>
       {/* statistics section */}
-      <div className="w-[90%] mx-auto"></div>
+      <div className=" bg-orange-500">
+        <h3 className="text-4xl text-white font-bold mt-12 pt-12 text-center">
+          Statistics
+        </h3>
+        <Statistics />
+      </div>
+      {/* Become a voulnteer secion */}
+      <div>
+        <BecomeAVolunteer />
+      </div>
     </div>
   );
 }
