@@ -2,6 +2,8 @@ import { Navigate, useLoaderData, useParams } from "react-router-dom";
 import { useAuthContext } from "../context/AuthProvider";
 import { useEffect, useState } from "react";
 import moment from "moment";
+import { deadlineChecker } from "../util/utilites";
+import toast from "react-hot-toast";
 
 function CampaignDetails() {
   const { image, title, type, info, minamount, deadline, email, name } =
@@ -9,18 +11,30 @@ function CampaignDetails() {
   const { user, loading } = useAuthContext();
   const { id } = useParams();
 
-  console.log(image, title, type, info, minamount, deadline, email, name);
+  // console.log(image, title, type, info, minamount, deadline, email, name);
 
   const date = deadline && moment(deadline).format("D MMMM YYYY");
 
-  console.log(user);
-
   function handleDonateSubmission(name, email) {
-    console.log(name, email);
+    const bool = deadlineChecker(deadline);
+    console.log(bool);
     const donatedUser = {
       email,
       name,
+      image,
+      title,
+      type,
+      info,
+      minamount,
+      deadline,
+      email,
+      name,
     };
+
+    if (!bool) {
+      toast.error("Sorry, Deadline Is Over For this Event; You Can't Donate ");
+      return;
+    }
 
     console.log(donatedUser);
     fetch("http://localhost:3000/donations", {
@@ -31,6 +45,7 @@ function CampaignDetails() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        toast.success("Congratulations, Donated Successfully");
       });
   }
 

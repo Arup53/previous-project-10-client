@@ -1,6 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import { useAuthContext } from "../context/AuthProvider";
 import { useState } from "react";
+import { MdOutlineHome } from "react-icons/md";
+import { FaTable } from "react-icons/fa";
+import { MdOutlinePostAdd } from "react-icons/md";
+import { GrDocumentStore } from "react-icons/gr";
+import { GiPayMoney } from "react-icons/gi";
+import { TbDoorEnter } from "react-icons/tb";
+import { MdOutlinePersonAdd } from "react-icons/md";
 
 function Headers() {
   const { user, logOut } = useAuthContext();
@@ -11,31 +18,101 @@ function Headers() {
   }
 
   return (
-    <div className=" md:mx-auto flex justify-between  gap-6 bg-red-300">
+    <div className=" md:mx-auto flex justify-between  gap-6 py-4">
       <div>Logo</div>
-      <div className="flex justify-between gap-2">
+      <div className="flex justify-between gap-2 text-sm">
         {/* logo */}
         <div></div>
 
-        <NavLink className="btn" to={"/"}>
+        <NavLink
+          className={({ isActive }) =>
+            `px-4 py-2 flex gap-1 justify-center items-center  ${
+              isActive && "bg-orange-400 text-white rounded-lg"
+            }`
+          }
+          to={"/"}
+        >
+          <span className="text-sm">
+            <MdOutlineHome />
+          </span>
           Home
         </NavLink>
-        <NavLink className="btn" to={"/campaigns"}>
+        <NavLink
+          className={({ isActive }) =>
+            `px-4 py-2 flex gap-1 justify-center items-center  ${
+              isActive && "bg-orange-400 text-white rounded-lg"
+            }`
+          }
+          to={"/campaigns"}
+        >
+          <span>
+            <FaTable />
+          </span>
           Campaigns
         </NavLink>
-        <NavLink className="btn" to={"/addcampaign"}>
+        <NavLink
+          className={({ isActive }) =>
+            `px-4 py-2 flex gap-1 justify-center items-center  ${
+              isActive && "bg-orange-400 text-white rounded-lg"
+            }`
+          }
+          to={"/addcampaign"}
+        >
+          <span>
+            <MdOutlinePostAdd />
+          </span>
           Add New Campaign
         </NavLink>
-        <NavLink className="btn" to={"/mycampaign"}>
+        <NavLink
+          className={({ isActive }) =>
+            `px-4 py-2 flex gap-1 justify-center items-center  ${
+              isActive && "bg-orange-400 text-white rounded-lg"
+            }`
+          }
+          to={"/mycampaign"}
+        >
+          <span>
+            <GrDocumentStore />
+          </span>{" "}
           My Campaign
         </NavLink>
-        <NavLink className="btn" to={"/mydonations"}>
+        <NavLink
+          className={({ isActive }) =>
+            `px-4 py-2 flex gap-1 justify-center items-center  ${
+              isActive && "bg-orange-400 text-white rounded-lg"
+            }`
+          }
+          to={"/mydonations"}
+        >
+          <span>
+            <GiPayMoney />
+          </span>{" "}
           My Donations
         </NavLink>
-        <NavLink className="btn" to={"/login"}>
+        <NavLink
+          className={({ isActive }) =>
+            `px-4 py-2 flex gap-1 justify-center items-center  ${
+              isActive && "bg-orange-400 text-white rounded-lg"
+            }`
+          }
+          to={"/login"}
+        >
+          <span>
+            <TbDoorEnter />
+          </span>
           Login
         </NavLink>
-        <NavLink className="btn" to={"/signup"}>
+        <NavLink
+          className={({ isActive }) =>
+            `px-4 py-2 flex gap-1 justify-center items-center  ${
+              isActive && "bg-orange-400 text-white rounded-lg"
+            }`
+          }
+          to={"/signup"}
+        >
+          <span>
+            <MdOutlinePersonAdd />
+          </span>{" "}
           Register
         </NavLink>
       </div>
@@ -50,7 +127,7 @@ function Headers() {
         </div>
         <div className="px-2">
           {user ? (
-            <button onClick={handleLogOut} className="btn">
+            <button onClick={handleLogOut} className="btn btn-ghost">
               Logout
             </button>
           ) : (

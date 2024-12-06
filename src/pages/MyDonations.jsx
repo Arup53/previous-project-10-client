@@ -11,7 +11,7 @@ function MyDonations() {
     let { email } = user || {};
     if (email) {
       fetch(
-        `http://localhost:3000/mycampaigns?email=${encodeURIComponent(email)}`
+        `http://localhost:3000/mydonations?email=${encodeURIComponent(email)}`
       )
         .then((res) => res.json())
         .then((data) => {
