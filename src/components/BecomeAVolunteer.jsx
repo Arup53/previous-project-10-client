@@ -1,13 +1,19 @@
 import Lottie from "lottie-react";
 import Animation1 from "../animation/Animation1.json";
+import { useAuthContext } from "../context/AuthProvider";
 
 function BecomeAVolunteer() {
+  const { theme } = useAuthContext();
   return (
     <div
       className="relative bg-no-repeat bg-cover backdrop-blur-2xl flex flex-col items-center md:flex-row justify-around gap-6 h-[500px]"
       style={{ backgroundImage: `url(w-1.jpg)` }}
     >
-      <div className="absolute inset-0 bg-black bg-opacity-50 "></div>
+      <div
+        className={`absolute inset-0 bg-black   ${
+          theme === "dark" ? "bg-opacity-80" : "bg-opacity-50"
+        }`}
+      ></div>
 
       <div className="w-[400px] h-[400px]">
         <Lottie animationData={Animation1} loop={true} />

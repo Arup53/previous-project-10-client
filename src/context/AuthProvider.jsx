@@ -16,6 +16,7 @@ const auth = getAuth(app);
 function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [theme, setTheme] = useState("light");
 
   function signUp(email, password) {
     setLoading(true);
@@ -49,6 +50,10 @@ function AuthProvider({ children }) {
 
   console.log(user);
 
+  function handleToggle() {
+    setTheme((currTheme) => (currTheme === "light" ? "dark" : "light"));
+  }
+
   const obj = {
     user,
     setUser,
@@ -58,6 +63,8 @@ function AuthProvider({ children }) {
     logIn,
     updateUser,
     logOut,
+    theme,
+    handleToggle,
   };
   return <AuthContext.Provider value={obj}>{children}</AuthContext.Provider>;
 }

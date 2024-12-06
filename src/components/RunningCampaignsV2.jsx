@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { filterByActivation, limiter } from "../util/utilites";
 import moment from "moment";
+import { useAuthContext } from "../context/AuthProvider";
 
 function RunningCampaignsV2() {
   const [campaigns, setCampaigns] = useState(null);

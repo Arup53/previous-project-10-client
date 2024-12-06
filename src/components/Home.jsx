@@ -8,9 +8,11 @@ import BecomeAVolunteer from "./BecomeAVolunteer";
 
 function Home() {
   const campaigns = useLoaderData();
+  const { theme } = useAuthContext();
   return (
-    <div>
+    <div data-theme={theme}>
       {/* banner section */}
+
       <Banner />
 
       {/*Running campaign sections */}
@@ -21,7 +23,7 @@ function Home() {
         <RunningCampaignsV2 />
       </div>
       {/* statistics section */}
-      <div className=" bg-orange-500">
+      <div className={`${theme === "light" && "bg-orange-500"}`}>
         <h3 className="text-4xl text-white font-bold mt-12 pt-12 text-center">
           Statistics
         </h3>
