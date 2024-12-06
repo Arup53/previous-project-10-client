@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ElementCard from "../components/ElementCard";
 import { TbFileDescription } from "react-icons/tb";
+import Loader from "../components/Loader";
 
 function Campaigns() {
   const [loading, setLoading] = useState(true);
@@ -22,11 +23,7 @@ function Campaigns() {
   }
 
   if (loading) {
-    return (
-      <div className="min-h-[600px] mx-auto flex justify-center items-center">
-        <span className="loading loading-bars loading-lg"></span>
-      </div>
-    );
+    return <Loader />;
   }
 
   return (

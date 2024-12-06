@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useAuthContext } from "../context/AuthProvider";
 import toast from "react-hot-toast";
 import { Navigate } from "react-router-dom";
+import Loader from "../components/Loader";
 
 function AddCampaigns() {
   const { user, loading } = useAuthContext();
@@ -62,11 +63,7 @@ function AddCampaigns() {
   }
 
   if (loading) {
-    return (
-      <div className="min-h-[600px] mx-auto flex justify-center items-center">
-        <span className="loading loading-bars loading-lg"></span>
-      </div>
-    );
+    return <Loader />;
   }
 
   if (!user) {

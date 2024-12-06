@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useAuthContext } from "../context/AuthProvider";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import Loader from "../components/Loader";
 
 function UpdateMyCampaign() {
   const { id } = useParams();
@@ -59,11 +60,7 @@ function UpdateMyCampaign() {
   }
 
   if (loading) {
-    return (
-      <div className="min-h-[600px] mx-auto flex justify-center items-center">
-        <span className="loading loading-bars loading-lg"></span>
-      </div>
-    );
+    return <Loader />;
   }
 
   if (!user) {

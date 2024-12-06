@@ -21,15 +21,15 @@ function RunningCampaignsV2() {
 
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-6">
         {campaigns &&
           campaigns.map((campaign) => (
             <div
               key={campaign._id}
-              className="card bg-base-100 w-96 rounded-t-none shadow-xl"
+              className="card bg-base-100 w-80   lg:w-96 mx-auto rounded-t-none shadow-xl"
             >
               <figure>
-                <img className="h-[300px]" src={`${campaign.image}`} />
+                <img className="h-[300px] w-full" src={`${campaign.image}`} />
               </figure>
               <div className="card-body space-y-6">
                 <h2 className="text-lg text-center font-bold">

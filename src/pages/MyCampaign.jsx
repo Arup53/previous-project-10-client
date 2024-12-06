@@ -4,6 +4,7 @@ import { useAuthContext } from "../context/AuthProvider";
 import Swal from "sweetalert2";
 import { TiDocumentAdd } from "react-icons/ti";
 import { MdOutlineDeleteForever } from "react-icons/md";
+import Loader from "../components/Loader";
 
 function MyCampaign() {
   const { user, loading } = useAuthContext();
@@ -58,11 +59,7 @@ function MyCampaign() {
   }
 
   if (loading) {
-    return (
-      <div className="min-h-[600px] mx-auto flex justify-center items-center">
-        <span className="loading loading-bars loading-lg"></span>
-      </div>
-    );
+    return <Loader />;
   }
 
   if (!user) {

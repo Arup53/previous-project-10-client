@@ -3,7 +3,7 @@ import { Typewriter } from "react-simple-typewriter";
 
 function Banner() {
   return (
-    <div className="w-full mb-24">
+    <div className="w-full mb-24  ">
       <div className="w-full   ">
         <div className=" h-[100vh] ">
           <Carousel
@@ -36,7 +36,7 @@ function Banner() {
             >
               <div className="absolute inset-0 bg-black bg-opacity-50"></div>
               <div className="relative h-full flex flex-col justify-center items-center ">
-                <p className=" relative z-10 md:px-14  text-3xl md:text-5xl text-white text-center  font-bold tracking-wider leading-normal">
+                <p className="z-10 md:px-14  text-3xl md:text-5xl text-white text-center  font-bold tracking-wider leading-normal">
                   Let's Come Together to <br />
                   <Typewriter
                     words={[
@@ -61,14 +61,14 @@ function Banner() {
             >
               <div className="absolute inset-0 bg-black bg-opacity-50 "></div>
               <div className="relative h-full flex flex-col justify-center items-center pl-24 ">
-                <p className=" self-start  z-10 md:px-14  text-3xl md:text-5xl text-white text-left  font-bold tracking-wider leading-normal ">
+                <p className="md:self-start  z-10 md:px-14  text-3xl md:text-5xl text-white text-left  font-bold tracking-wider leading-normal ">
                   Empower with{" "}
                   <Typewriter
                     words={["Knowledge", "Wisdom", "Learning"]}
                     loop={false}
                   />
                 </p>
-                <p className=" self-start text-sm text-white text-left my-2 pl-14  ">
+                <p className=" md:self-start text-sm text-white md:text-left my-2 md:pl-14  ">
                   Your donation can bring books, school supplies, and
                   educational support to communities in need,
                   <br /> paving the way for brighter futures.
@@ -82,15 +82,15 @@ function Banner() {
               style={{ backgroundImage: `url(B-3.jpg)` }}
             >
               <div className="absolute inset-0 bg-black bg-opacity-50 "></div>
-              <div className="relative h-full flex flex-col justify-center items-center pr-24 ">
-                <p className=" self-end  z-10 md:px-14  text-3xl md:text-5xl text-white text-left  font-bold tracking-wider leading-normal ">
+              <div className="relative h-full flex flex-col justify-center items-center md:pr-24 ">
+                <p className="md:self-end  z-10 md:px-14  text-3xl md:text-5xl text-white md:text-left  font-bold tracking-wider leading-normal ">
                   Join Hands to Save <br />
                   <Typewriter
                     words={["Lives", "Families", "Humanity"]}
                     loop={false}
                   />
                 </p>
-                <p className=" self-end text-sm text-white text-left my-2 pr-10  ">
+                <p className=" self-end text-sm text-white text-left my-2 md:pr-10  ">
                   Donations go directly to funding treatments, medicines, and
                   health services for <br /> people in vulnerable situations,
                   making healthcare accessible to all.

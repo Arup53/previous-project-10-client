@@ -5,10 +5,16 @@ import Banner from "./Banner";
 import RunningCampaignsV2 from "./RunningCampaignsV2";
 import Statistics from "./Statistics";
 import BecomeAVolunteer from "./BecomeAVolunteer";
+import Loader from "./Loader";
 
 function Home() {
   const campaigns = useLoaderData();
-  const { theme } = useAuthContext();
+  const { theme, loading } = useAuthContext();
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <div data-theme={theme}>
       {/* banner section */}
@@ -16,7 +22,7 @@ function Home() {
       <Banner />
 
       {/*Running campaign sections */}
-      <div className="w-[90%] mx-auto">
+      <div className="w-full md:w-[90%] mx-auto">
         <h3 className="text-4xl font-bold my-12 text-center">
           Running Campaings
         </h3>
@@ -30,9 +36,9 @@ function Home() {
         <Statistics />
       </div>
       {/* Become a voulnteer secion */}
-      <div>
+      {/* <div>
         <BecomeAVolunteer />
-      </div>
+      </div> */}
     </div>
   );
 }

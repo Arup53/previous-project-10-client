@@ -2,6 +2,7 @@ import { Navigate } from "react-router-dom";
 import { useAuthContext } from "../context/AuthProvider";
 import { useEffect, useState } from "react";
 import DonationCard from "../components/DonationCard";
+import Loader from "../components/Loader";
 
 function MyDonations() {
   const { user, loading } = useAuthContext();
@@ -22,11 +23,7 @@ function MyDonations() {
   }, [user]);
 
   if (loading) {
-    return (
-      <div className="min-h-[600px] mx-auto flex justify-center items-center">
-        <span className="loading loading-bars loading-lg"></span>
-      </div>
-    );
+    return <Loader />;
   }
 
   if (!user) {
@@ -42,7 +39,7 @@ function MyDonations() {
         </p>
       </div>
       <h3 className="font-bold text-4xl text-center my-12">Donation Lists</h3>
-      <div className="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 ">
+      <div className="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 ">
         {myCampaigns &&
           myCampaigns?.map((campaign, idx) => (
             <DonationCard key={campaign._id} campaign={campaign} />

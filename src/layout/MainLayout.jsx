@@ -10,7 +10,7 @@ function MainLayout() {
 
   return (
     <div data-theme={`${pathname === "/" && theme}`}>
-      <header className="md:w-[90%] mx-auto">
+      <header className="w-[80%] md:w-[90%] mx-auto">
         <Headers />
       </header>
 

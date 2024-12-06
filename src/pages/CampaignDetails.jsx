@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import moment from "moment";
 import { deadlineChecker } from "../util/utilites";
 import toast from "react-hot-toast";
+import Loader from "../components/Loader";
 
 function CampaignDetails() {
   const { image, title, type, info, minamount, deadline, email, name } =
@@ -50,11 +51,7 @@ function CampaignDetails() {
   }
 
   if (loading) {
-    return (
-      <div className="min-h-[600px] mx-auto flex justify-center items-center">
-        <span className="loading loading-bars loading-lg"></span>
-      </div>
-    );
+    return <Loader />;
   }
 
   if (!user) {
