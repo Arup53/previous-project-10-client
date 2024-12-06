@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { filterByActivation, limiter } from "../util/utilites";
 import moment from "moment";
 import { useAuthContext } from "../context/AuthProvider";
+import { Link } from "react-router-dom";
+import { TbFileDescription } from "react-icons/tb";
 
 function RunningCampaignsV2() {
   const [campaigns, setCampaigns] = useState(null);
@@ -40,6 +42,12 @@ function RunningCampaignsV2() {
                   Deadline: {moment(campaign.deadline).format("D MMMM YYYY")}
                 </p>
               </div>
+              <Link
+                className="btn btn-ghost py-2"
+                to={`/details/${campaign._id}`}
+              >
+                <p className="text-center text-sm ">See More</p>
+              </Link>
             </div>
           ))}
       </div>

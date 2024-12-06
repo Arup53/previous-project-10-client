@@ -66,8 +66,16 @@ function Campaigns() {
                   <td>{campaign.deadline}</td>
                   <td>{campaign.minamount}</td>
                   <td>
-                    <Link to={`/details/${campaign._id}`} className="btn">
-                      <TbFileDescription />
+                    <Link
+                      className="btn btn-ghost"
+                      to={`/details/${campaign._id}`}
+                    >
+                      <div className="flex flex-col justify-center items-center gap-1 ">
+                        <div className="text-center">
+                          <TbFileDescription />
+                        </div>
+                        <p className="text-center text-xs">See More</p>
+                      </div>
                     </Link>
                   </td>
                 </tr>
