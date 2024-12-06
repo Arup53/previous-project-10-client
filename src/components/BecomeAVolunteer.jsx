@@ -1,11 +1,18 @@
+import Lottie from "lottie-react";
+import Animation1 from "../animation/Animation1.json";
+
 function BecomeAVolunteer() {
   return (
     <div
-      className="relative h-full bg-no-repeat bg-cover backdrop-blur-2xl"
+      className="relative bg-no-repeat bg-cover backdrop-blur-2xl flex flex-col items-center md:flex-row justify-around gap-6 h-[500px]"
       style={{ backgroundImage: `url(w-1.jpg)` }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-50 "></div>
-      <div className="relative  flex flex-col justify-center items-center pr-24 h-[480px] ">
+
+      <div className="w-[400px] h-[400px]">
+        <Lottie animationData={Animation1} loop={true} />
+      </div>
+      <div className="relative  flex flex-col justify-center items-center pr-24  ">
         <p className=" self-end  z-10 md:px-14  text-3xl md:text-5xl text-white text-left  font-bold tracking-wider leading-normal ">
           Become a Volunteer
           <br />
@@ -24,7 +31,7 @@ function BecomeAVolunteer() {
               className="input input-bordered join-item w-[400px]"
               placeholder="Email"
             />
-            <button className="btn join-item">Subscribe</button>
+            <button className="btn join-item">Join Us</button>
           </div>
         </div>
       </div>
