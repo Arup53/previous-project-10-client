@@ -1,4 +1,5 @@
 import { Carousel } from "flowbite-react";
+import { Typewriter } from "react-simple-typewriter";
 
 function Banner() {
   return (
@@ -6,6 +7,7 @@ function Banner() {
       <div className="w-full   ">
         <div className=" h-[100vh] ">
           <Carousel
+            slideInterval={9000}
             theme={{
               control: {
                 base: "inline-flex h-8 w-8 items-center justify-center rounded-full bg-blue-500 group-hover:bg-yellow-300 group-focus:outline-none group-focus:ring-4 group-focus:ring-white hover:scale-105 dark:group-focus:ring-gray-800/70 sm:h-10 sm:w-10 hidden md:flex ",
@@ -36,7 +38,14 @@ function Banner() {
               <div className="relative h-full flex flex-col justify-center items-center ">
                 <p className=" relative z-10 md:px-14  text-3xl md:text-5xl text-white text-center  font-bold tracking-wider leading-normal">
                   Let's Come Together to <br />
-                  Share a Meal
+                  <Typewriter
+                    words={[
+                      "Share a Meal",
+                      "Bond Over Food",
+                      "Unite Over Food",
+                    ]}
+                    loop={false}
+                  />
                 </p>
                 <p className="text-sm text-white text-center my-2">
                   Food banks, shelters, healthcare services, education programs,
@@ -53,7 +62,11 @@ function Banner() {
               <div className="absolute inset-0 bg-black bg-opacity-50 "></div>
               <div className="relative h-full flex flex-col justify-center items-center pl-24 ">
                 <p className=" self-start  z-10 md:px-14  text-3xl md:text-5xl text-white text-left  font-bold tracking-wider leading-normal ">
-                  Empower with Knowledge
+                  Empower with{" "}
+                  <Typewriter
+                    words={["Knowledge", "Wisdom", "Learning"]}
+                    loop={false}
+                  />
                 </p>
                 <p className=" self-start text-sm text-white text-left my-2 pl-14  ">
                   Your donation can bring books, school supplies, and
@@ -72,7 +85,10 @@ function Banner() {
               <div className="relative h-full flex flex-col justify-center items-center pr-24 ">
                 <p className=" self-end  z-10 md:px-14  text-3xl md:text-5xl text-white text-left  font-bold tracking-wider leading-normal ">
                   Join Hands to Save <br />
-                  Lives
+                  <Typewriter
+                    words={["Lives", "Families", "Humanity"]}
+                    loop={false}
+                  />
                 </p>
                 <p className=" self-end text-sm text-white text-left my-2 pr-10  ">
                   Donations go directly to funding treatments, medicines, and

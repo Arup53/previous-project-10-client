@@ -4,7 +4,6 @@ import { useAuthContext } from "../context/AuthProvider";
 import Swal from "sweetalert2";
 import { TiDocumentAdd } from "react-icons/ti";
 import { MdOutlineDeleteForever } from "react-icons/md";
-import ReuseableBannerForPages from "../components/ReuseableBannerForPages";
 
 function MyCampaign() {
   const { user, loading } = useAuthContext();
