@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { data, Link } from "react-router-dom";
 import { useAuthContext } from "../context/AuthProvider";
+import toast from "react-hot-toast";
 
 function LogIn() {
-  const { logIn } = useAuthContext();
+  const { logIn, popUpSignUp } = useAuthContext();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -26,10 +27,77 @@ function LogIn() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(obj),
-        });
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            form.reset();
+            console.log(data);
+            toast.success("Login Successful");
+          });
       })
       .catch((err) => {
+        form.reset();
         console.log(err.message);
+        toast.error("Login Error", err.message);
+      });
+  }
+
+  function handleGoogleSignIn() {
+    let isPresent = false;
+    popUpSignUp()
+      .then((result) => {
+        console.log(result.user);
+        const user = result.user;
+        const googleUser = {
+          name: user.displayName,
+          email: user.email,
+          createAt: user?.metadata?.creationTime,
+        };
+
+        async function checker() {
+          const res = await fetch(
+            `https://backend-ecru-mu.vercel.app/users?email=${googleUser.email}`
+          );
+          const data = await res.json();
+
+          if (data.length === 0) {
+            fetch("https://backend-ecru-mu.vercel.app/users", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(googleUser),
+            })
+              .then((res) => res.json())
+              .then((data) => console.log(data));
+          } else {
+            const lastLogInTime = result?.user?.metadata?.lastLoginAt;
+            const obj = {
+              email: googleUser.email,
+              lastLogInTime,
+            };
+
+            fetch("https://backend-ecru-mu.vercel.app/users", {
+              method: "PATCH",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(obj),
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                console.log(data);
+              });
+          }
+        }
+        checker();
+
+        toast.success("Login Successful");
+      })
+
+      .catch((err) => {
+        console.log(err.message);
+        toast.error("Login Error", err.message);
       });
   }
 
@@ -43,8 +111,8 @@ function LogIn() {
       </div>
       <div className="hero  min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <form onSubmit={handleSubmit} className="card-body">
+          <div className="card bg-base-100 w-[350px] min-h-[60vh] shrink-0 shadow-2xl p-2">
+            <form onSubmit={handleSubmit} className="card-body ">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -78,9 +146,12 @@ function LogIn() {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button className="btn w-full btn-primary">Login</button>
               </div>
             </form>
+            <button onClick={handleGoogleSignIn} className="btn m-2">
+              Google SignIn
+            </button>
           </div>
         </div>
       </div>
