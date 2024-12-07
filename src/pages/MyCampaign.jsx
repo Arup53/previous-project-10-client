@@ -74,7 +74,7 @@ function MyCampaign() {
     <div>
       <div className="h-[600px]  bg-[url('c-2.jpg')]  bg-cover bg-no-repeat mb-24">
         <div className="h-full w-full bg-gradient-to-b from-black/40 to-black/60"></div>
-        <p className="bg-orange-400 text-4xl font-bold text-white text-center relative -top-14 left-1/3 px-12 py-6 w-[400px]">
+        <p className=" bg-orange-400 text-lg md:text-4xl font-bold text-white text-center relative -top-14 left-1/3 -translate-x-6 md:-translate-x-16 lg:translate-x-0 px-12 py-6 w-[200px] md:w-[400px]">
           My Campaigns
         </p>
       </div>
@@ -86,10 +86,10 @@ function MyCampaign() {
               {/* head */}
               <thead>
                 <tr className="space-x-2">
-                  <th></th>
+                  <th className="hidden md:block"></th>
                   <th>Title</th>
-                  <th>Donation Type</th>
-                  <th>Minimum Dontation Amount</th>
+                  <th className="hidden md:block">Donation Type</th>
+                  <th className="hidden lg:block">Minimum Dontation Amount</th>
                   <th className="text-center">Deadline</th>
                   <th className="text-center">Action</th>
                 </tr>
@@ -99,10 +99,10 @@ function MyCampaign() {
                 {myCampaigns &&
                   myCampaigns?.map((campaign, idx) => (
                     <tr key={campaign._id} className="hover">
-                      <th>{idx + 1}</th>
+                      <th className="hidden md:block">{idx + 1}</th>
                       <td>{campaign.title}</td>
-                      <td>{campaign.type}</td>
-                      <td>{campaign.minamount}</td>
+                      <td className="hidden md:block">{campaign.type}</td>
+                      <td className="hidden lg:block">{campaign.minamount}</td>
                       <td>{campaign.deadline}</td>
                       <td className="flex gap-2">
                         <Link
