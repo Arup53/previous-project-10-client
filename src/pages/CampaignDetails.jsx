@@ -60,7 +60,7 @@ function CampaignDetails() {
 
   return (
     <div className="my-24">
-      <div className="flex flex-col md:flex-row md:justify-between gap-6">
+      <div className="flex flex-col lg:flex-row  justify-center items-center lg:justify-between lg:items-start gap-6">
         {/* left */}
         <div className="flex flex-col gap-6 basis-4/5 shadow-2xl space-y-4 p-12">
           <figure>
@@ -77,7 +77,7 @@ function CampaignDetails() {
         </div>
 
         {/* right */}
-        <div className="flex flex-col gap-6 basis-1/5  shadow-2xl space-y-4 px-2 py-6 h-[400px]">
+        <div className="flex flex-col gap-6 basis-1/5  shadow-2xl space-y-4 px-2 py-6 h-[400px] w-[400px] md:w-[600px] lg:w-full">
           <h3 className="text-center font-bold pt-4">About This Campaign</h3>
           <div className="flex justify-between gap-1 text-xs ">
             <p>Campaign Type</p>
