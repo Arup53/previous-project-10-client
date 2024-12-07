@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../context/AuthProvider";
+import toast from "react-hot-toast";
 
 function SignUp() {
   const { signUp, updateUser } = useAuthContext();
@@ -12,7 +13,17 @@ function SignUp() {
     const email = form.email.value;
     const password = form.pass.value;
     const photo = form.photo.value;
+    const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
 
+    // password validation
+    if (!passwordRegex.test(password)) {
+      const msg =
+        "Password must contain one uppercase, one lowercase and length must be 6 or greater";
+      toast.error(msg);
+      return;
+    }
+
+    // sign up
     signUp(email, password)
       .then((data) => {
         console.log(data);
@@ -29,9 +40,13 @@ function SignUp() {
         })
           .then((res) => res.json())
           .then((data) => console.log(data));
+        toast.success("Registration Successful");
+        form.reset();
       })
       .catch((err) => {
         console.log(err.message);
+        toast.error("Error While Registering", err.message);
+        form.reset();
       });
   }
 
