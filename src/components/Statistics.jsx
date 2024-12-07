@@ -6,7 +6,7 @@ import { useAuthContext } from "../context/AuthProvider";
 
 function Statistics() {
   const { theme } = useAuthContext();
-  const background = theme === "light" ? "bg-orange-600/40" : "bg-gray-600";
+  const background = theme === "light" ? "bg-blue-900/40" : "bg-gray-600";
   return (
     <div className="flex justify-center items-center mt-6 py-12 ">
       <div className="grid grid-cols-1  md:grid-cols-3  gap-1 md:gap-12 md:px-12 md:py-24">

@@ -59,12 +59,15 @@ function CampaignDetails() {
   }
 
   return (
-    <div className="my-24">
+    <div className="my-6 lg:my-18 ">
       <div className="flex flex-col lg:flex-row  justify-center items-center lg:justify-between lg:items-start gap-6">
         {/* left */}
         <div className="flex flex-col gap-6 basis-4/5 shadow-2xl space-y-4 p-12">
           <figure>
-            <img className="h-[500px] object-cover w-full " src={`${image}`} />
+            <img
+              className="h-[500px] md:object-cover  w-full "
+              src={`${image}`}
+            />
           </figure>
           <h3>{title}</h3>
           <p>{info}</p>

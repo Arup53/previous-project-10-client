@@ -16,7 +16,7 @@ function Home() {
   }
 
   return (
-    <div data-theme={theme}>
+    <div data-theme={theme} className="overflow-hidden">
       {/* banner section */}
 
       <Banner />
@@ -29,16 +29,21 @@ function Home() {
         <RunningCampaignsV2 />
       </div>
       {/* statistics section */}
-      <div className={`${theme === "light" && "bg-orange-500"}`}>
+      <div
+        className={`${
+          theme === "light" &&
+          "bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900"
+        }`}
+      >
         <h3 className="text-4xl text-white font-bold mt-12 pt-12 text-center">
           Statistics
         </h3>
         <Statistics />
       </div>
       {/* Become a voulnteer secion */}
-      {/* <div>
+      <div className="overflow-hidden">
         <BecomeAVolunteer />
-      </div> */}
+      </div>
     </div>
   );
 }
