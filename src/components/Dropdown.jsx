@@ -4,7 +4,7 @@ import { MdOutlinePersonAdd } from "react-icons/md";
 
 function Dropdown() {
   const { user } = useAuthContext();
-  const color = "bg-orange-400 text-white";
+  const color = "bg-sky-400 text-white";
   const padding = "rounded-lg";
   return (
     <details className="dropdown  text-sm  flex-none translate-x-4  box-border z-40">

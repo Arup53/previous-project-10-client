@@ -16,6 +16,7 @@ import { Tooltip } from "react-tooltip";
 function Headers() {
   const { user, logOut, loading, theme } = useAuthContext();
   const { handleToggle } = useAuthContext();
+  const bg = "bg-sky-400";
 
   console.log(user);
   function handleLogOut() {
@@ -29,7 +30,7 @@ function Headers() {
         <NavLink
           className={({ isActive }) =>
             `px-4 py-2 flex gap-1 justify-center items-center  ${
-              isActive && "bg-orange-400 text-white rounded-lg"
+              isActive && `${bg} text-white rounded-lg`
             }`
           }
           to={"/"}
@@ -42,7 +43,7 @@ function Headers() {
         <NavLink
           className={({ isActive }) =>
             `md:px-4 py-2 flex gap-1 justify-center items-center  ${
-              isActive && "bg-orange-400 text-white rounded-lg"
+              isActive && `${bg} text-white rounded-lg`
             }`
           }
           to={"/campaigns"}
@@ -55,7 +56,7 @@ function Headers() {
         <NavLink
           className={({ isActive }) =>
             `px-4 py-2 flex gap-1 justify-center items-center  ${
-              isActive && "bg-orange-400 text-white rounded-lg"
+              isActive && `${bg} text-white rounded-lg`
             }`
           }
           to={"/addcampaign"}
@@ -68,7 +69,7 @@ function Headers() {
         <NavLink
           className={({ isActive }) =>
             `px-4 py-2 flex gap-1 justify-center items-center  ${
-              isActive && "bg-orange-400 text-white rounded-lg"
+              isActive && `${bg} text-white rounded-lg`
             }`
           }
           to={"/mycampaign"}
@@ -81,7 +82,7 @@ function Headers() {
         <NavLink
           className={({ isActive }) =>
             `px-4 py-2 flex gap-1 justify-center items-center  ${
-              isActive && "bg-orange-400 text-white rounded-lg"
+              isActive && `${bg} text-white rounded-lg`
             }`
           }
           to={"/mydonations"}
@@ -96,7 +97,7 @@ function Headers() {
           <NavLink
             className={({ isActive }) =>
               `px-4 py-2 flex gap-1 justify-center items-center  ${
-                isActive && "bg-orange-400 text-white rounded-lg"
+                isActive && `${bg} text-white rounded-lg`
               }`
             }
             to={"/signup"}
