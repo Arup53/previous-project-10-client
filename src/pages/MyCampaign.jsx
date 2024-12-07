@@ -86,10 +86,10 @@ function MyCampaign() {
               {/* head */}
               <thead>
                 <tr className="space-x-2">
-                  <th className="hidden md:block"></th>
+                  <th className="hidden lg:block"></th>
                   <th>Title</th>
                   <th className="hidden md:block">Donation Type</th>
-                  <th className="hidden lg:block">Minimum Dontation Amount</th>
+
                   <th className="text-center">Deadline</th>
                   <th className="text-center">Action</th>
                 </tr>
@@ -99,12 +99,12 @@ function MyCampaign() {
                 {myCampaigns &&
                   myCampaigns?.map((campaign, idx) => (
                     <tr key={campaign._id} className="hover">
-                      <th className="hidden md:block">{idx + 1}</th>
+                      <th className="hidden lg:block">{idx + 1}</th>
                       <td>{campaign.title}</td>
-                      <td className="hidden md:block">{campaign.type}</td>
-                      <td className="hidden lg:block">{campaign.minamount}</td>
+                      <td className="">{campaign.type}</td>
+
                       <td>{campaign.deadline}</td>
-                      <td className="flex gap-2">
+                      <td className="flex flex-col lg:flex-row gap-2">
                         <Link
                           to={`/updatecampaign/${campaign._id}`}
                           className="btn text-green-600  text-sm"

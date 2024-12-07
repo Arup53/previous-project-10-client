@@ -28,8 +28,6 @@ function CampaignDetails() {
       info,
       minamount,
       deadline,
-      email,
-      name,
     };
 
     if (!bool) {
