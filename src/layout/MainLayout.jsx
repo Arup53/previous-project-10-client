@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Headers from "../components/Headers";
 import { useAuthContext } from "../context/AuthProvider";
+import Footer from "../components/Footer";
 
 function MainLayout() {
   const { pathname } = useLocation();
@@ -18,7 +19,9 @@ function MainLayout() {
         <Outlet />
       </main>
 
-      <footer className="">This is footer</footer>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
