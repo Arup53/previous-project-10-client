@@ -74,22 +74,22 @@ function AddCampaigns() {
     <>
       <div className="h-[600px]  bg-[url('c-4.jpg')]  bg-cover bg-no-repeat mb-24">
         <div className="h-full w-full bg-gradient-to-b from-black/40 to-black/60"></div>
-        <p className="bg-orange-400 text-4xl font-bold text-white text-center relative -top-14 left-1/3 px-12 py-6 w-[400px]">
+        <p className=" bg-orange-400 text-lg md:text-4xl font-bold text-white text-center relative -top-14 left-1/3 -translate-x-6 md:-translate-x-16 lg:translate-x-0 px-12 py-6 w-[200px] md:w-[400px]">
           Add New Campaigns
         </p>
       </div>
 
-      <div className="min-h-[400px] flex justify-center items-center ">
+      <div className=" min-h-[400px] flex  justify-center items-center  ">
         <form onSubmit={handleSubmit}>
           {/* form row name and quantity */}
-          <div className="md:flex gap-4">
+          <div className="lg:flex gap-4">
             <div>
               <h3>Image</h3>
               <div className="join">
                 <input
                   name="image"
                   type="text"
-                  className="input input-bordered join-item w-[400px]"
+                  className="input input-bordered join-item w-[400px] "
                   placeholder="imageURL"
                 />
               </div>
@@ -108,13 +108,13 @@ function AddCampaigns() {
           </div>
 
           {/* form row supplier and test  */}
-          <div className="md:flex gap-4">
+          <div className="lg:flex lg:flex-col gap-4">
             <div>
               <h3>Campaign type</h3>
               <div className="join">
                 <select
                   name="type"
-                  className="input input-bordered join-item w-[400px]"
+                  className="input input-bordered join-item w-[400px] lg:w-[815px]"
                 >
                   <option>personal issue</option>
                   <option>startup</option>
@@ -126,10 +126,10 @@ function AddCampaigns() {
             <div>
               <h3>Description</h3>
               <div className="join">
-                <input
+                <textarea
                   name="description"
                   type="text"
-                  className="input input-bordered join-item w-[400px]"
+                  className="input input-bordered join-item w-[400px] lg:w-[815px] h-[200px]"
                   placeholder="description"
                 />
               </div>
@@ -137,7 +137,7 @@ function AddCampaigns() {
           </div>
 
           {/* form row category and details */}
-          <div className="md:flex gap-4">
+          <div className="lg:flex gap-4">
             <div>
               <h3>Minimum donation amount</h3>
               <div className="join">
@@ -163,7 +163,7 @@ function AddCampaigns() {
           </div>
           {/* form row photo */}
 
-          <div className="md:flex  gap-4">
+          <div className="lg:flex  gap-4">
             <div>
               <h3>Email</h3>
               <div className="join">
@@ -192,7 +192,11 @@ function AddCampaigns() {
             </div>
           </div>
 
-          <input className="btn w-full" type="submit" value="Add Camapign" />
+          <input
+            className="btn w-full my-6"
+            type="submit"
+            value="Add Camapign"
+          />
         </form>
       </div>
     </>
