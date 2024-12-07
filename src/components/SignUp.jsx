@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useAuthContext } from "../context/AuthProvider";
 
 function SignUp() {
@@ -19,7 +20,7 @@ function SignUp() {
         const createdAt = data.user?.metadata?.creationTime;
         const newUser = { name, email, createdAt };
 
-        fetch("http://localhost:3000/users", {
+        fetch("https://backend-ecru-mu.vercel.app/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -94,9 +95,12 @@ function SignUp() {
                   required
                 />
                 <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
+                  <Link
+                    to={"/login"}
+                    className="label-text-alt link link-hover"
+                  >
+                    Already Have An Account?Login
+                  </Link>
                 </label>
               </div>
               <div className="form-control mt-6">

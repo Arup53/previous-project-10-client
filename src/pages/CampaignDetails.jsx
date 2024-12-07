@@ -38,7 +38,7 @@ function CampaignDetails() {
     }
 
     console.log(donatedUser);
-    fetch("http://localhost:3000/donations", {
+    fetch("https://backend-ecru-mu.vercel.app/donations", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(donatedUser),

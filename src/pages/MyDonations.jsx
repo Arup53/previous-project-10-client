@@ -12,7 +12,9 @@ function MyDonations() {
     let { email } = user || {};
     if (email) {
       fetch(
-        `http://localhost:3000/mydonations?email=${encodeURIComponent(email)}`
+        `https://backend-ecru-mu.vercel.app/mydonations?email=${encodeURIComponent(
+          email
+        )}`
       )
         .then((res) => res.json())
         .then((data) => {

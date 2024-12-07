@@ -14,7 +14,9 @@ function MyCampaign() {
     let { email } = user || {};
     if (email) {
       fetch(
-        `http://localhost:3000/mycampaigns?email=${encodeURIComponent(email)}`
+        `https://backend-ecru-mu.vercel.app/mycampaigns?email=${encodeURIComponent(
+          email
+        )}`
       )
         .then((res) => res.json())
         .then((data) => {
@@ -38,7 +40,9 @@ function MyCampaign() {
     }).then((result) => {
       if (result.isConfirmed) {
         // delete from the database
-        fetch(`http://localhost:3000/campaigns/${id}`, { method: "DELETE" })
+        fetch(`https://backend-ecru-mu.vercel.app/campaigns/${id}`, {
+          method: "DELETE",
+        })
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount) {

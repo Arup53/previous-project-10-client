@@ -43,7 +43,7 @@ function UpdateMyCampaign() {
 
     console.log(obj);
 
-    fetch(`http://localhost:3000/camapigns/${id}`, {
+    fetch(`https://backend-ecru-mu.vercel.app/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

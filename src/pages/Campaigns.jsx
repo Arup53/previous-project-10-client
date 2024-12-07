@@ -1,6 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
-import ElementCard from "../components/ElementCard";
+
 import { TbFileDescription } from "react-icons/tb";
 import Loader from "../components/Loader";
 

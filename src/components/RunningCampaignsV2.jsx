@@ -9,7 +9,7 @@ function RunningCampaignsV2() {
   const [campaigns, setCampaigns] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/campaigns")
+    fetch("https://backend-ecru-mu.vercel.app/campaigns")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

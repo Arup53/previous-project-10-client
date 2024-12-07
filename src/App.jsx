@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:3000/campaigns"),
+        loader: () => fetch("https://backend-ecru-mu.vercel.app/campaigns"),
       },
       {
         path: "/signup",
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
       {
         path: "/campaigns",
         element: <Campaigns />,
-        loader: () => fetch("http://localhost:3000/campaigns"),
+        loader: () => fetch("https://backend-ecru-mu.vercel.app/campaigns"),
       },
       {
         path: "/addcampaign",
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
         path: "/details/:id",
         element: <CampaignDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/campaigns/${params.id}`),
+          fetch(`https://backend-ecru-mu.vercel.app/campaigns/${params.id}`),
       },
       {
         path: "/updatecampaign/:id",

@@ -46,7 +46,7 @@ function AddCampaigns() {
 
     console.log(obj);
 
-    fetch("http://localhost:3000/campaigns", {
+    fetch("https://backend-ecru-mu.vercel.app/campaigns", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
