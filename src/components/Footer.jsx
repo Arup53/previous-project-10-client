@@ -3,7 +3,7 @@ import { FaFacebook } from "react-icons/fa";
 
 function Footer() {
   return (
-    <div className="min-h-[400px] bg-no-repeat bg-cover bg-[url('footer-back.jpg')] py-12">
+    <div className="min-h-[400px] bg-no-repeat bg-cover bg-[url('/footer-back.jpg')] py-12">
       <div className="text-center text-2xl text-white my-2 ">FundSpring</div>
       <div>
         <p className="text-center tex-sm text-white ">

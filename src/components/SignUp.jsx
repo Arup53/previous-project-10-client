@@ -52,9 +52,9 @@ function SignUp() {
 
   return (
     <div>
-      <div className="h-[600px]  bg-[url('c-6.avif')]  bg-cover bg-no-repeat mb-24">
+      <div className="h-[600px]  bg-[url('/c-6.avif')]  bg-cover bg-no-repeat mb-24">
         <div className="h-full w-full bg-gradient-to-b from-black/40 to-black/60"></div>
-        <p className="bg-orange-400 text-lg md:text-4xl font-bold text-white text-center relative md:-top-14 -top-10 left-1/3 -translate-x-6 md:-translate-x-16 lg:translate-x-0 px-12 py-6 w-[200px] md:w-[400px]">
+        <p className="bg-sky-400 text-lg md:text-4xl font-bold text-white text-center relative md:-top-14 -top-10 left-1/3 -translate-x-6 md:-translate-x-16 lg:translate-x-0 px-12 py-6 w-[200px] md:w-[400px]">
           Register
         </p>
       </div>
