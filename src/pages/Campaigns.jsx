@@ -31,23 +31,23 @@ function Campaigns() {
       <div className="h-[600px] bg-[url('c-1.jpg')]  bg-cover bg-no-repeat mb-12">
         <div className="h-full w-full bg-gradient-to-b from-black/40 to-black/60"></div>
       </div>
-      <p className="bg-orange-400 text-4xl font-bold text-white text-center relative -top-24 left-1/3 px-12 py-6 w-[400px]">
+      <p className="bg-orange-400 text-lg md:text-4xl font-bold text-white text-center relative -top-24  left-1/3 -translate-x-6 md:-translate-x-16 lg:translate-x-0 px-12 py-6 w-[200px] md:w-[400px] ">
         Campaigns
       </p>
       <button onClick={handleSort} className="btn">
         Sort By Descending
       </button>
-      <div className="overflow-x-auto w-[80%] mx-auto ">
+      <div className="overflow-x-auto w-full md:w-[80%] mx-auto ">
         <table className="table">
           {/* head */}
           <thead>
             <tr>
               <th></th>
               <th>Title</th>
-              <th>Cause(type)</th>
+              <th className="hidden lg:block">Cause(type)</th>
               <th>Added By</th>
               <th>Deadline</th>
-              <th>Minimum Amount</th>
+              <th className="hidden md:block">Minimum Amount</th>
               <th>Details</th>
             </tr>
           </thead>
@@ -58,10 +58,10 @@ function Campaigns() {
                 <tr key={campaign._id} className="hover">
                   <th>{idx + 1}</th>
                   <td>{campaign.title}</td>
-                  <td>{campaign.type}</td>
+                  <td className="hidden lg:block">{campaign.type}</td>
                   <td>{campaign.name}</td>
                   <td>{campaign.deadline}</td>
-                  <td>{campaign.minamount}</td>
+                  <td className="hidden md:block">{campaign.minamount}</td>
                   <td>
                     <Link
                       className="btn btn-ghost"
