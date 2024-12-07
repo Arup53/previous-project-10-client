@@ -7,8 +7,8 @@ function DonationCard({ campaign }) {
 
   console.log(image, title, type, deadline);
   return (
-    <div>
-      <div className="card bg-base-100 w-96 rounded-t-none shadow-xl">
+    <div className="md:flex justify-center items-center">
+      <div className="card bg-base-100 md:w-80 lg:w-96 rounded-t-none shadow-xl">
         <figure>
           <img className="w-full h-[300px] object-cover " src={`${image}`} />
         </figure>
