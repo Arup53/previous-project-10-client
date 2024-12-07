@@ -25,7 +25,14 @@ function Headers() {
 
   return (
     <div className=" md:mx-auto flex justify-between  md:gap-6 py-4   ">
-      <div>Logo</div>
+      <div className="flex justify-center items-center">
+        <img
+          className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]"
+          src="/logo.jpg"
+          alt=""
+        />
+        <h3 className="text-xs md:text-base font-bold">FundSpring</h3>
+      </div>
       <div className="lg:flex md:justify-between md:gap-2 text-sm hidden overflow-hidden ">
         <NavLink
           className={({ isActive }) =>

@@ -90,7 +90,7 @@ function Banner() {
                     loop={false}
                   />
                 </p>
-                <p className=" self-end text-sm text-white text-left my-2 md:pr-10  ">
+                <p className=" md:self-end text-sm text-white text-center md:text-left my-2 md:pr-10  ">
                   Donations go directly to funding treatments, medicines, and
                   health services for <br /> people in vulnerable situations,
                   making healthcare accessible to all.
