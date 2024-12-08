@@ -7,8 +7,6 @@ function MainLayout() {
   const { pathname } = useLocation();
   const { theme } = useAuthContext();
 
-  console.log(pathname);
-
   return (
     <div data-theme={`${pathname === "/" && theme}`}>
       <header className="w-[80%] md:w-[90%] mx-auto">

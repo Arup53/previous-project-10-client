@@ -11,11 +11,10 @@ function LogIn() {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.pass.value;
-    console.log(email);
 
     logIn(email, password)
       .then((result) => {
-        console.log(result);
+        toast.success("Login Successful");
         const lastLogInTime = result?.user?.metadata?.lastLoginAt;
         const obj = {
           email,
@@ -31,13 +30,11 @@ function LogIn() {
           .then((res) => res.json())
           .then((data) => {
             form.reset();
-            console.log(data);
-            toast.success("Login Successful");
           });
       })
       .catch((err) => {
         form.reset();
-        console.log(err.message);
+
         toast.error("Login Error", err.message);
       });
   }
@@ -46,7 +43,7 @@ function LogIn() {
     let isPresent = false;
     popUpSignUp()
       .then((result) => {
-        console.log(result.user);
+        toast.success("Login Successful");
         const user = result.user;
         const googleUser = {
           name: user.displayName,
@@ -69,7 +66,7 @@ function LogIn() {
               body: JSON.stringify(googleUser),
             })
               .then((res) => res.json())
-              .then((data) => console.log(data));
+              .then((data) => {});
           } else {
             const lastLogInTime = result?.user?.metadata?.lastLoginAt;
             const obj = {
@@ -85,18 +82,13 @@ function LogIn() {
               body: JSON.stringify(obj),
             })
               .then((res) => res.json())
-              .then((data) => {
-                console.log(data);
-              });
+              .then((data) => {});
           }
         }
         checker();
-
-        toast.success("Login Successful");
       })
 
       .catch((err) => {
-        console.log(err.message);
         toast.error("Login Error", err.message);
       });
   }

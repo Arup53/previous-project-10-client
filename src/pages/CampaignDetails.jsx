@@ -12,13 +12,11 @@ function CampaignDetails() {
   const { user, loading } = useAuthContext();
   const { id } = useParams();
 
-  // console.log(image, title, type, info, minamount, deadline, email, name);
-
   const date = deadline && moment(deadline).format("D MMMM YYYY");
 
   function handleDonateSubmission(name, email) {
     const bool = deadlineChecker(deadline);
-    console.log(bool);
+
     const donatedUser = {
       email,
       name,
@@ -35,7 +33,6 @@ function CampaignDetails() {
       return;
     }
 
-    console.log(donatedUser);
     fetch("https://backend-ecru-mu.vercel.app/donations", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -43,7 +40,6 @@ function CampaignDetails() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         toast.success("Congratulations, Donated Successfully");
       });
   }

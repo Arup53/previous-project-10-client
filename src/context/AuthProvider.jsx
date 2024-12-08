@@ -56,8 +56,6 @@ function AuthProvider({ children }) {
     return () => unsubscribe();
   }, []);
 
-  console.log(user);
-
   function handleToggle() {
     setTheme((currTheme) => (currTheme === "light" ? "dark" : "light"));
   }

@@ -18,7 +18,6 @@ function Headers() {
   const { handleToggle } = useAuthContext();
   const bg = "bg-sky-400";
 
-  console.log(user);
   function handleLogOut() {
     logOut();
   }

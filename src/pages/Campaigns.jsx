@@ -8,7 +8,6 @@ function Campaigns() {
   const [loading, setLoading] = useState(true);
   const data = useLoaderData();
   const [campaigns, setCampaigns] = useState(data);
-  console.log(campaigns);
 
   useEffect(() => {
     setLoading(false);
@@ -18,7 +17,7 @@ function Campaigns() {
     const sortedCampaigns = [...campaigns].sort(
       (a, b) => b.minamount - a.minamount
     );
-    console.log(sortedCampaigns);
+
     setCampaigns(sortedCampaigns);
   }
 

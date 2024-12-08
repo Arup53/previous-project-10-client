@@ -20,13 +20,10 @@ function MyCampaign() {
       )
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           setMyCampaigns(data);
         });
     }
   }, [user]);
-
-  console.log(myCampaigns);
 
   function handleDelete(id) {
     Swal.fire({
@@ -56,7 +53,6 @@ function MyCampaign() {
               (campaign) => campaign._id !== id
             );
             setMyCampaigns(remaingUsers);
-            console.log(data);
           });
       }
     });

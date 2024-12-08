@@ -12,7 +12,6 @@ function RunningCampaignsV2() {
     fetch("https://backend-ecru-mu.vercel.app/campaigns")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         const filteredData = filterByActivation(data);
         const finalData = limiter(filteredData);
         setCampaigns(finalData);

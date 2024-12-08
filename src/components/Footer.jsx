@@ -1,5 +1,5 @@
 import { Typewriter } from "react-simple-typewriter";
-import { FaFacebook } from "react-icons/fa";
+
 import Map from "./Map";
 
 function Footer() {

@@ -26,7 +26,6 @@ function SignUp() {
     // sign up
     signUp(email, password)
       .then((data) => {
-        console.log(data);
         updateUser(name, photo);
         const createdAt = data.user?.metadata?.creationTime;
         const newUser = { name, email, createdAt };
@@ -39,12 +38,11 @@ function SignUp() {
           body: JSON.stringify(newUser),
         })
           .then((res) => res.json())
-          .then((data) => console.log(data));
+          .then((data) => {});
         toast.success("Registration Successful");
         form.reset();
       })
       .catch((err) => {
-        console.log(err.message);
         toast.error("Error While Registering", err.message);
         form.reset();
       });

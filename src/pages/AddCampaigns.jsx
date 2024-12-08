@@ -7,7 +7,6 @@ import Loader from "../components/Loader";
 function AddCampaigns() {
   const { user, loading } = useAuthContext();
   const [userObj, setUserObj] = useState({});
-  console.log(user);
 
   useEffect(() => {
     if (!user) return;
@@ -17,8 +16,6 @@ function AddCampaigns() {
       email: user.email,
     });
   }, [user]);
-
-  console.log(userObj);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -44,8 +41,6 @@ function AddCampaigns() {
       name,
     };
 
-    console.log(obj);
-
     fetch("https://backend-ecru-mu.vercel.app/campaigns", {
       method: "POST",
       headers: {
@@ -56,7 +51,6 @@ function AddCampaigns() {
       .then((res) => res.json())
       .then((data) => {
         toast.success("Campaign Added Successfully ");
-        console.log(data);
       });
 
     form.reset();

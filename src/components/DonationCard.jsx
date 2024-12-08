@@ -5,7 +5,6 @@ function DonationCard({ campaign }) {
 
   const date = deadline && moment(deadline).format("D MMMM YYYY");
 
-  console.log(image, title, type, deadline);
   return (
     <div className="md:flex justify-center items-center">
       <div className="card bg-base-100 md:w-80 lg:w-96 rounded-t-none shadow-xl">

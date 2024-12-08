@@ -8,7 +8,6 @@ function UpdateMyCampaign() {
   const { id } = useParams();
   const { user, loading } = useAuthContext();
   const [userObj, setUserObj] = useState({});
-  console.log(id);
 
   useEffect(() => {
     if (!user) return;
@@ -41,8 +40,6 @@ function UpdateMyCampaign() {
       deadline,
     };
 
-    console.log(obj);
-
     fetch(`https://backend-ecru-mu.vercel.app/camapigns/${id}`, {
       method: "PUT",
       headers: {
@@ -53,7 +50,6 @@ function UpdateMyCampaign() {
       .then((res) => res.json())
       .then((data) => {
         toast.success("Campaign Updated Successfully ");
-        console.log(data);
       });
 
     form.reset();
