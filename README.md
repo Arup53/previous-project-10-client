@@ -6,7 +6,7 @@
 
 ## 🔗 Live Link
 
-[Live Link](https://for-assign.firebaseapp.com/)
+[Live Link](https://for-assign.web.app/)
 
 ## 📂 GitHub Repository
 
