@@ -6,6 +6,7 @@ import RunningCampaignsV2 from "./RunningCampaignsV2";
 import Statistics from "./Statistics";
 import BecomeAVolunteer from "./BecomeAVolunteer";
 import Loader from "./Loader";
+import Map from "./Map";
 
 function Home() {
   const campaigns = useLoaderData();

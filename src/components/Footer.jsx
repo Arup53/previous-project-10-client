@@ -1,5 +1,6 @@
 import { Typewriter } from "react-simple-typewriter";
 import { FaFacebook } from "react-icons/fa";
+import Map from "./Map";
 
 function Footer() {
   return (
@@ -17,9 +18,9 @@ function Footer() {
         </p>
       </div>
 
-      <div className=" flex flex-col  md:flex-row justify-center items-center gap-6   md:px-20  min-h-[400px]  text-white ">
+      <div className=" flex flex-col  md:flex-row justify-center items-center gap-4   md:px-20  min-h-[400px]  text-white ">
         <div></div>
-        <div className=" grid grid-cols-1 md:grid-cols-2 ">
+        <div className=" grid grid-cols-1 md:grid-cols-3 ">
           <div className=" ">
             <p className="text-lg">Sections</p>
             <p>Home</p>
@@ -31,6 +32,9 @@ function Footer() {
             <p className="text-lg">Address</p>
             <p>6th street, Walton Avenue</p>
             <p>New York, USA</p>
+          </div>
+          <div className="lg:flex justify-center items-center hidden ">
+            <Map />
           </div>
         </div>
       </div>
