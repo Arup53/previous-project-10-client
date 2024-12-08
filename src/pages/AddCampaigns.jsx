@@ -41,6 +41,11 @@ function AddCampaigns() {
       name,
     };
 
+    if (!image || !title || !info || !minamount || !deadline) {
+      toast.error("Sorry, You have to add all fields to submit successfully");
+      return;
+    }
+
     fetch("https://backend-ecru-mu.vercel.app/campaigns", {
       method: "POST",
       headers: {
