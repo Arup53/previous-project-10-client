@@ -9,7 +9,7 @@ function BecomeAVolunteer() {
       <div className="w-[200px] h-[200px] md:w-[400px] md:h-[400px]">
         <Lottie animationData={Animation1} loop={true} />
       </div>
-      <div className=" lex flex-col justify-center items-center space-y-4 md:space-y-0 lg:space-y-6 md:translate-x-16 lg:translate-x-0 md:pr-24  ">
+      <div className=" flex flex-col justify-center items-center space-y-4 md:space-y-0 lg:space-y-6 md:translate-x-16 lg:translate-x-0 md:pr-24  ">
         <p className=" md:self-end text-center lg:text-left  z-10 md:px-14  text-3xl md:text-5xl text-white md:text-left  font-bold tracking-wider leading-normal ">
           Become a Volunteer
           <br />
