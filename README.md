@@ -8,9 +8,7 @@
 
 [Live Link](https://for-assign.web.app/)
 
-## 📂 GitHub Repository
 
-[Repo](https://github.com/programming-hero-web-course2/b10-a10-client-side-Arup53)
 
 ---
 
